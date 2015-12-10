@@ -32,42 +32,60 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     controller: 'AppCtrl'
   })
 
-  .state('app.search', {
-    url: '/search',
+  .state('app.images', {
+    url: '/images',
     views: {
       'menuContent': {
-        templateUrl: 'templates/search.html'
+        templateUrl: 'templates/images.html'
       }
     }
   })
-
-  .state('app.browse', {
-      url: '/browse',
+  
+   .state('app.team', {
+    url: '/team',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/team.html'
+      }
+    }
+  })
+  
+   .state('app.music', {
+    url: '/music',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/music.html'
+      }
+    }
+  })
+  
+  .state('app.map', {
+      url: '/map',
       views: {
         'menuContent': {
-          templateUrl: 'templates/browse.html'
+          templateUrl: 'templates/map.html'
         }
       }
     })
-    .state('app.playlists', {
-      url: '/playlists',
+    .state('app.events', {
+      url: '/events',
       views: {
         'menuContent': {
-          templateUrl: 'templates/playlists.html',
-          controller: 'PlaylistsCtrl'
+          templateUrl: 'templates/events.html',
+          controller: 'EventsCtrl'
         }
       }
     })
 
   .state('app.single', {
-    url: '/playlists/:playlistId',
+    url: '/events/:eventId',
     views: {
       'menuContent': {
-        templateUrl: 'templates/playlist.html',
-        controller: 'PlaylistCtrl'
+        templateUrl: 'templates/event.html',
+        controller: 'EventCtrl'
       }
     }
   });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/playlists');
+  $urlRouterProvider.otherwise('/app/events');
 });
